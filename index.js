@@ -92,9 +92,13 @@ const stepThroughCell = (row, column) => {
     }
     //Remove a wall from either horizontals or verticals
     if (direction === 'left') {
-        verticals[row] [column - 1] = true;
+        verticals[row][column - 1] = true;
     } else if (direction === 'right') {
-        verticals[row] [column] = true;
+        verticals[row][column] = true;
+    } else if (direction === 'up') {
+        horizontals[row-1][column] = true;
+    } else if (direction === 'down') {
+        horizontals[row][column] = true;
     }
   }
   // Visit that next cell
